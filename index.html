@@ -7,71 +7,137 @@
     <title>RLBot</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <style type="text/css">
         html,
         body {
-            background-color: #ccd3d4;
+            background-color: #000;
+            font-family: Roboto, sans-serif;
+            /*
+            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+            */
         }
+
+        .jumbotron {
+            background: url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/252950/9d08146d72933fce357c1fe07ca2efef9b089bc9.jpg) right bottom #5e8c5c;
+            color: white;
+        }
+
+        #main {
+            color: white;
+        }
+
         .language {
+            color: black;
             text-align: center;
             padding: auto 0;
         }
+
         .language a {
             color: black;
             text-decoration: none;
+        }
+
+        .card {
+            box-shadow: 0px 0px 2px#ccc;
+        }
+
+        .nav {
+            margin-bottom: 0px !important;
+            color: white !important;
+            border-bottom-color: #000;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .nav a {
+            color: white;
+        }
+
+        .floating-nav {
+            position: absolute;
+            width: 100vw;
+
+        }
+
+        .jumbotron {
+            padding-top: 100px;
+        }
+        .card {
+            color: black;
+        }
+        .card-image-right {
+            float: right;
+            height: 80px;
+            opacity: 0.8;
         }
     </style>
 </head>
 
 <body>
-
+    <div class="floating-nav">
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 box-shadow nav">
+            <span class="my-0 mr-md-auto font-weight-normal">
+                <a href="index.html">
+                    <img src="images/RLBot.png" height="45px" width="auto">
+                </a>
+            </span>
+            <nav class="my-2 my-md-0 mr-md-3">
+                <a class="p-2" href="https://github.com/RLBot/RLBot/wiki/Setup-Instructions-%28current%29">Install</a>
+                <a class="p-2" href="https://discord.gg/zbaAKPt">Discord</a>
+                <a class="p-2" href="https://www.reddit.com/r/RocketLeagueBots/">Subreddit</a>
+            </nav>
+            <a class="btn btn-outline-primary" href="https://github.com/RLBot/RLBot">GitHub</a>
+        </div>
+    </div>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <div class="row">
-                <div class="col-lg-1 col-md-2">
-                    <img src="images/RLBot_logo.png" width="auto" height="80px">
-                </div>
                 <div class="col-lg-11 col-md-10">
-                    <h1 class="display-4">RLBot</h1>
-                    <p class="lead">Write custom Rocket League bots for offline play.</p>
+                    <h1>About RLBot</h1>
+                    <p>RLBot is an open source framework enabling the ability to write custom Rocket League bots for offline
+                        play.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container">
-
+    <div class="container" id="main">
         <div class="row">
             <div class="col-lg-8">
-                <h2>Get Started</h2>
                 <div class="card mb-3">
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-4 language">
-                                <a href="http://scratch.rlbot.org">
-                                    <img src="images/scratch.png" height="100px" width="auto">
-                                    <h5>Scratch</h5>
-                                </a>
-                            </div>
-                            <div class="col-md-4 language">
-                                <a href="https://github.com/RLBot/RLBotPythonExample">
-                                    <img src="images/python.png" height="100px" width="auto">
-                                    <h5>Python</h5>
-                                </a>
-                            </div>
-                            <div class="col-md-4 language">
-                                <a href="https://github.com/RLBot/RLBotJavaExample">
-                                    <img src="images/java.png" height="100px" width="auto">
-                                    <h5 class="card-title">Java</h5>
-                                </a>
-                            </div>
-                        </div>
+                        <img src="images/scratch.png" class="card-image-right">
+                        <h5 class="card-title">Scratch</h5>
+                        <p>
+                            <a href="http://scratch.rlbot.org">Program your first bot using Scratch!</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="images/python.png" class="card-image-right">
+                        <h5 class="card-title">Python</h5>
+                        <p>
+                            <a href="https://github.com/RLBot/RLBotPythonExample">Write a more advanced bot in Python!</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="images/java.png" class="card-image-right">
+                        <h5 class="card-title">Java</h5>
+                        <p>
+                            <a href="https://github.com/RLBot/RLBotJavaExample">Build an
+                                <em>enterprise</em> bot in Java!</a>
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
-                <iframe src="https://discordapp.com/widget?id=348658686962696195&theme=dark" width="350" height="500" allowtransparency="true"
+                <iframe src="https://discordapp.com/widget?id=348658686962696195&theme=light" width="350" height="500" allowtransparency="true"
                     frameborder="0"></iframe>
             </div>
 
