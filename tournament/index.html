@@ -45,17 +45,19 @@
             color: #333;
         }
 
-        @media (max-width: 700px) {
-            .countdown-box {
-                width: 100%;
-            }
-        }
-
         .countdown-box {
-            margin-top: 10px;
+            margin-top: 30px;
+            margin-left: 60px;
             position: relative;
             min-width: 300px;
             display: inline-block;
+        }
+
+        @media (max-width: 700px) {
+            .countdown-box {
+                width: 100%;
+                margin-left: 0;
+            }
         }
 
         .countdown-shield {
@@ -76,28 +78,19 @@
 </head>
 <body>
 
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
+<div class="jumbotron jumbotron-fluid" style="padding-top: 0; padding-bottom: 0">
+    <div id="rlbot-title">
+        <img src="tournament-promo.png" style="max-width: 800px; width: 100%">
+    </div>
 
-        <div style="display: flex; flex-flow: row wrap">
-            <div id="rlbot-title">
-                <a href="../"><h1 class="display-4"><img src="../rlbot_logo.png" class="line-logo"> RLBot</h1></a>
-                <p class="lead">Tournament Details for August 4, 2018</p>
-            </div>
+    <div class="countdown-box">
 
-            <div style="flex-grow: 1"></div>
-
-            <div class="countdown-box">
-
-                <div data-type="countdown" data-id="677853" class="tickcounter" style="width: 100%; position: relative; padding-bottom: 25%">
-                    <a href="//www.tickcounter.com/countdown/677853/rlbot-tournament-2018-begins" title="RLBot Tournament 2018 Begins">RLBot Tournament 2018 Begins</a>
-                    <a href="//www.tickcounter.com/" title="Countdown">Countdown</a>
-                </div>
-                <script>(function(d, s, id) { var js, pjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//www.tickcounter.com/static/js/loader.js"; pjs.parentNode.insertBefore(js, pjs); }(document, "script", "tickcounter-sdk"));</script>
-                <div class="countdown-shield"></div>
-            </div>
+        <div data-type="countdown" data-id="677853" class="tickcounter" style="width: 100%; position: relative; padding-bottom: 25%">
+            <a href="//www.tickcounter.com/countdown/677853/rlbot-tournament-2018-begins" title="RLBot Tournament 2018 Begins">RLBot Tournament 2018 Begins</a>
+            <a href="//www.tickcounter.com/" title="Countdown">Countdown</a>
         </div>
-
+        <script>(function(d, s, id) { var js, pjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//www.tickcounter.com/static/js/loader.js"; pjs.parentNode.insertBefore(js, pjs); }(document, "script", "tickcounter-sdk"));</script>
+        <div class="countdown-shield"></div>
     </div>
 </div>
 
@@ -108,7 +101,7 @@
             <a href="https://www.twitch.tv/rlbotofficial">
                 <div class="card mb-3">
                     <div class="card-body">
-                        <img src="../twitch_logo.png" class="card-image-right">
+                        <img src="twitch_logo.png" class="card-image-right">
                         <h5 class="card-title">Official Stream</h5>
                         <p>https://www.twitch.tv/rlbotofficial</p>
                     </div>
@@ -118,9 +111,9 @@
             <a href="https://docs.google.com/document/d/1gG2b1hMwJ0CXA4KAwIDH4pcxd9YObZnFsCqUMYNHhC4/edit?usp=sharing">
                 <div class="card mb-3">
                     <div class="card-body">
-                        <img src="../google-docs-logo.png" class="card-image-right" style="padding-right:8px">
+                        <img src="google-docs-logo.png" class="card-image-right" style="padding-right:8px">
                         <h5 class="card-title">Rules</h5>
-                        <p>View the rules and lots of details on the brackets.</p>
+                        <p>View the rules and all the details</p>
                     </div>
                 </div>
             </a>
@@ -128,13 +121,23 @@
 
             <div class="card mb-3">
                 <div class="card-body">
-                    <img src="../pixel-heart.png" class="card-image-right">
+                    <img src="pixel-heart.png" class="card-image-right">
                     <h5 class="card-title">Charities</h5>
                     <ul>
                         <li><a href="https://anython.com/goals-for-direct-relief-in-the-rocket-league-ai-tournament-9346">Goal-a-thon for directrelief.org</a></li>
                     </ul>
                 </div>
             </div>
+
+            <a href="../">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="../rlbot_logo.png" class="card-image-right">
+                        <h5 class="card-title">Learn More</h5>
+                        <p>Everything you need to start on your own bot!</p>
+                    </div>
+                </div>
+            </a>
 
         </div>
         <div class="col-lg-4">
