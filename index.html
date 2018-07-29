@@ -68,6 +68,20 @@
         #rlbot-title {
             display: inline-block;
         }
+
+        .twitch-card {
+            background: linear-gradient(to bottom, #501e9a 0%,#612ad8 50%,#777ed6 100%);
+            color: white;
+        }
+
+        .twitch-card .card-body {
+            padding-top: 5px;
+            padding-bottom: 0;
+        }
+
+        .twitch-card .card-title {
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -106,6 +120,16 @@
 
     <div class="row">
         <div class="col-lg-8">
+
+            <a href="./tournament">
+                <div class="card mb-3 twitch-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tournament</h5>
+                        <p>Catch the action on, August 4-5 2018!</p>
+                    </div>
+                </div>
+            </a>
+
             <a href="https://github.com/RLBot/RLBotScratchInterface">
                 <div class="card mb-3">
                     <div class="card-body">
