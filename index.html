@@ -6,6 +6,16 @@
     <title>RLBot</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="libs/gCalFlow/jquery.gcal_flow.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <!--en-US appears to be baked into globalize.js already, horay.-->
+    <script src="libs/globalize/globalize.js" type="text/javascript"></script>
+    <script src="libs/globalize/cultures/globalize.culture.en-GB.js" type="text/javascript"></script>
+    <script src="libs/globalize/cultures/globalize.culture.de.js" type="text/javascript"></script>
+    <script src="libs/globalize/cultures/globalize.culture.nl.js" type="text/javascript"></script>
+    <script src="libs/globalize/cultures/globalize.culture.pt.js" type="text/javascript"></script>
+    <script type="text/javascript" src="libs/gCalFlow/jquery.gcal_flow.js"></script>
 
     <style type="text/css">
         html, body {
@@ -66,6 +76,22 @@
 
         .comparison-checks {
             color: #333;
+        }
+
+        .gCalFlow .gcf-header-block {
+            background: #7289da;
+            padding: 10px;
+        }
+
+        .gCalFlow .gcf-item-block {
+            padding: 2px 8px;
+        }
+
+        .gCalFlow {
+            width: 350px;
+            height: 200px;
+            margin-bottom: 15px;
+            border: none;
         }
     </style>
 </head>
@@ -145,6 +171,7 @@
             </a>
         </div>
         <div class="col-lg-4">
+
             <a href="./Features" class="no-underline">
                 <div class="card mb-3 compact-card">
                     <div class="card-body" style="text-decoration: none">
@@ -159,12 +186,39 @@
                 </div>
             </a>
 
+            <div id="gcf-simple">
+                <div class="gcf-header-block">
+                    <div class="gcf-title-block">
+                        <span>Upcoming Events</span>
+                    </div>
+                </div>
+                <div class="gcf-item-container-block">
+                    <div class="gcf-item-block">
+                        <div class="gcf-item-header-block">
+                            <div class="gcf-item-date-block">
+                                <span class="gcf-item-daterange"></span>
+                            </div>
+                            <div class="gcf-item-title-block">
+                                <strong class="gcf-item-title"></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $('#gcf-simple').gCalFlow({
+                    calid: 'rlbotofficial%40gmail.com',
+                    auto_scroll: false,
+                    apikey: 'AIzaSyBQ40UqlMPexzWxTNd7EYtTrkoFF_DqpqM'
+                });
+            </script>
+
             <iframe src="https://discordapp.com/widget?id=348658686962696195&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
         </div>
-
     </div>
 
 </div>
 
 </body>
+
 </html>
