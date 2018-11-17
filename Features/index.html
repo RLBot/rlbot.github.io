@@ -53,6 +53,23 @@
             word-wrap: normal;
         }
 
+        th a, th a:hover {
+            color: rgb(63, 123, 195);
+        }
+
+        .lang-header {
+            width: 60px;
+            display: inline-block;
+        }
+
+        table {
+            text-align: center;
+        }
+
+        .feature-col {
+            text-align: left;
+        }
+
     </style>
 </head>
 <body>
@@ -75,17 +92,17 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>Features</th>
-                                <th><a href="https://github.com/RLBot/RLBotPythonExample">Python</a></th>
-                                <th><a href="https://github.com/RLBot/RLBotJavaExample">Java</a></th>
-                                <th><a href="https://github.com/RLBot/RLBotCSharpExample">.Net</a></th>
-                                <th><a href="https://github.com/RLBot/RLBotScratchInterface">Scratch</a></th>
-                                <th><a href="https://github.com/whatisaphone/rlbot-rust">Rust</a></th>
+                                <th class="feature-col">Features</th>
+                                <th><a class="lang-header" href="https://github.com/RLBot/RLBotPythonExample">Python</a></th>
+                                <th><a class="lang-header" href="https://github.com/RLBot/RLBotJavaExample">Java</a></th>
+                                <th><a class="lang-header" href="https://github.com/RLBot/RLBotCSharpExample">.NET</a></th>
+                                <th><a class="lang-header" href="https://github.com/RLBot/RLBotScratchInterface">Scratch</a></th>
+                                <th><a class="lang-header" href="https://github.com/whatisaphone/rlbot-rust">Rust</a></th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td>Basic Bot</td>
+                                <td class="feature-col">Basic Bot</td>
                                 <td><i class="material-icons">check_circle</i></td>
                                 <td><i class="material-icons">check_circle</i></td>
                                 <td><i class="material-icons">check_circle</i></td>
@@ -93,7 +110,7 @@
                                 <td><i class="material-icons">check_circle</i></td>
                             </tr>
                             <tr>
-                                <td><a href="https://github.com/RLBot/RLBot/wiki/Hoops">Hoops</a></td>
+                                <td class="feature-col"><a href="https://github.com/RLBot/RLBot/wiki/Hoops">Hoops</a></td>
                                 <td><i class="material-icons">check_circle</i></td>
                                 <td><i class="material-icons">check_circle</i></td>
                                 <td><i class="material-icons">check_circle</i></td>
@@ -101,15 +118,7 @@
                                 <td><i class="material-icons">check_circle</i></td>
                             </tr>
                             <tr>
-                                <td><a href="https://github.com/RLBot/RLBot/wiki/Dropshot">Dropshot</a></td>
-                                <td><i class="material-icons">check_circle</i></td>
-                                <td><i class="material-icons">check_circle</i></td>
-                                <td><i class="material-icons">check_circle</i></td>
-                                <td><i class="material-icons">check_circle</i></td>
-                                <td><i class="material-icons">check_circle</i></td>
-                            </tr>
-                            <tr>
-                                <td><a href="https://github.com/RLBot/RLBot/wiki/Ball-Path-Prediction">Ball Path Prediction</a></td>
+                                <td class="feature-col"><a href="https://github.com/RLBot/RLBot/wiki/Dropshot">Dropshot</a></td>
                                 <td><i class="material-icons">check_circle</i></td>
                                 <td><i class="material-icons">check_circle</i></td>
                                 <td><i class="material-icons">check_circle</i></td>
@@ -117,7 +126,7 @@
                                 <td><i class="material-icons">check_circle</i></td>
                             </tr>
                             <tr>
-                                <td><a href="https://www.reddit.com/r/RocketLeagueBots/wiki/rendering">In Game Rendering</a></td>
+                                <td class="feature-col"><a href="https://github.com/RLBot/RLBot/wiki/Ball-Path-Prediction">Ball Path Prediction</a></td>
                                 <td><i class="material-icons">check_circle</i></td>
                                 <td><i class="material-icons">check_circle</i></td>
                                 <td><i class="material-icons">check_circle</i></td>
@@ -125,7 +134,7 @@
                                 <td><i class="material-icons">check_circle</i></td>
                             </tr>
                             <tr>
-                                <td><a href="https://github.com/RLBot/RLBot/wiki/Manipulating-Game-State">Game State Setting</a></td>
+                                <td class="feature-col"><a href="https://www.reddit.com/r/RocketLeagueBots/wiki/rendering">In Game Rendering</a></td>
                                 <td><i class="material-icons">check_circle</i></td>
                                 <td><i class="material-icons">check_circle</i></td>
                                 <td><i class="material-icons">check_circle</i></td>
@@ -133,7 +142,15 @@
                                 <td><i class="material-icons">check_circle</i></td>
                             </tr>
                             <tr>
-                                <td><a href="https://www.reddit.com/r/RocketLeagueBots/wiki/quickchat">Send QuickChat</a></td>
+                                <td class="feature-col"><a href="https://github.com/RLBot/RLBot/wiki/Manipulating-Game-State">Game State Setting</a></td>
+                                <td><i class="material-icons">check_circle</i></td>
+                                <td><i class="material-icons">check_circle</i></td>
+                                <td><i class="material-icons">check_circle</i></td>
+                                <td></td>
+                                <td><i class="material-icons">check_circle</i></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-col"><a href="https://www.reddit.com/r/RocketLeagueBots/wiki/quickchat">Send QuickChat</a></td>
                                 <td><i class="material-icons">check_circle</i></td>
                                 <td><i class="material-icons">check_circle</i></td>
                                 <td><i class="material-icons">check_circle</i></td>
@@ -141,12 +158,12 @@
                                 <td></td>
                             </tr>
                             <tr>
-                                <td><a href="https://github.com/RLBot/RLBotPythonExample/wiki/Rigid-Body-Tick">Rigid Body Tick</a></td>
+                                <td class="feature-col"><a href="https://github.com/RLBot/RLBotPythonExample/wiki/Rigid-Body-Tick">Rigid Body Tick</a></td>
                                 <td><i class="material-icons">check_circle</i></td>
                                 <td></td>
+                                <td><i class="material-icons">check_circle</i></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><i class="material-icons">check_circle</i></td>
                             </tr>
                             </tbody>
                         </table>
