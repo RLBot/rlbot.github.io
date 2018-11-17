@@ -69,6 +69,36 @@
         .twitch-card .card-title {
             color: white;
         }
+
+        .feature-comparison {
+            position: absolute;
+            bottom: -42px;
+            right: 150px;
+            background-color: #71c7a7;
+            z-index: 10;
+            border-radius: 3px;
+            padding: 0 5px;
+            line-height: initial;
+            color: white;
+            font-weight: bold;
+            box-shadow: 2px 2px 5px #8080806b;
+            text-align: center;
+        }
+
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://bootstrapstudio.io/demo/embed/fonts/MaterialIcons-Regular.woff2) format('woff2');
+        }
+
+        .material-icons{
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 1.3em;
+            word-wrap: normal;
+        }
     </style>
 </head>
 <body>
@@ -87,20 +117,20 @@
     <div class="row">
         <div class="col-lg-8">
 
-            <a href="./Features">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Language feature comparison chart</h5>
-                        <p>
-                            <img src="python.png" class="card-image">
-                            <img src="java.png" class="card-image">
-                            <img src="dotnet.png" class="card-image">
-                            <img src="scratchcat.png" class="card-image">
-                            <img src="rust.svg" class="card-image">
-                        </p>
-                    </div>
-                </div>
-            </a>
+            <!--<a href="./Features">-->
+                <!--<div class="card mb-3">-->
+                    <!--<div class="card-body">-->
+                        <!--<h5 class="card-title">Language feature comparison chart</h5>-->
+                        <!--<p>-->
+                            <!--<img src="python.png" class="card-image">-->
+                            <!--<img src="java.png" class="card-image">-->
+                            <!--<img src="dotnet.png" class="card-image">-->
+                            <!--<img src="scratchcat.png" class="card-image">-->
+                            <!--<img src="rust.svg" class="card-image">-->
+                        <!--</p>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</a>-->
 
             <a href="https://github.com/RLBot/RLBotScratchInterface">
                 <div class="card mb-3">
@@ -109,6 +139,14 @@
                         <h5 class="card-title">Scratch</h5>
                         <p>Program your first bot using Scratch!</p>
                     </div>
+
+                    <a href="./Features">
+                        <div class="feature-comparison">
+                            <div style="height:18px"><i class="material-icons">expand_less</i></div>
+                            Compare features!
+                            <div><i class="material-icons">expand_more</i></div>
+                        </div>
+                    </a>
                 </div>
             </a>
 
