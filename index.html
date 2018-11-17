@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RLBot</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style type="text/css">
         html, body {
@@ -22,13 +23,6 @@
 
         .card-image-right {
             float: right;
-            height: 80px;
-            opacity: 0.8;
-            margin-left: 12px;
-        }
-
-        .card-image {
-            float: left;
             height: 80px;
             opacity: 0.8;
             margin-left: 12px;
@@ -61,7 +55,7 @@
             color: white;
         }
 
-        .twitch-card .card-body {
+        .compact-card .card-body {
             padding-top: 5px;
             padding-bottom: 0;
         }
@@ -70,38 +64,8 @@
             color: white;
         }
 
-        .twitch-card.language-comparison {
-            background: linear-gradient(to bottom, #304d9a 0%, #5361d8 50%, #4649ca 51%, #86a2d6 100%);
-        }
-
-        .feature-comparison {
-            position: absolute;
-            bottom: -42px;
-            right: 150px;
-            background-color: #71c7a7;
-            z-index: 10;
-            border-radius: 3px;
-            padding: 0 5px;
-            line-height: initial;
-            color: white;
-            font-weight: bold;
-            box-shadow: 2px 2px 5px #8080806b;
-            text-align: center;
-        }
-
-        @font-face {
-            font-family: 'Material Icons';
-            font-style: normal;
-            font-weight: 400;
-            src: url(https://bootstrapstudio.io/demo/embed/fonts/MaterialIcons-Regular.woff2) format('woff2');
-        }
-
-        .material-icons{
-            font-family: 'Material Icons';
-            font-weight: normal;
-            font-style: normal;
-            font-size: 1.3em;
-            word-wrap: normal;
+        .comparison-checks {
+            color: #333;
         }
     </style>
 </head>
@@ -121,21 +85,6 @@
     <div class="row">
         <div class="col-lg-8">
 
-            <!--<a href="./Features">-->
-                <!--<div class="card mb-3">-->
-                    <!--<div class="card-body">-->
-                        <!--<h5 class="card-title">Language feature comparison chart</h5>-->
-                        <!--<p>-->
-                            <!--<img src="python.png" class="card-image">-->
-                            <!--<img src="java.png" class="card-image">-->
-                            <!--<img src="dotnet.png" class="card-image">-->
-                            <!--<img src="scratchcat.png" class="card-image">-->
-                            <!--<img src="rust.svg" class="card-image">-->
-                        <!--</p>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</a>-->
-
             <a href="https://github.com/RLBot/RLBotScratchInterface">
                 <div class="card mb-3">
                     <div class="card-body">
@@ -143,14 +92,6 @@
                         <h5 class="card-title">Scratch</h5>
                         <p>Program your first bot using Scratch!</p>
                     </div>
-
-                    <a href="./Features">
-                        <div class="feature-comparison">
-                            <div style="height:18px"><i class="material-icons">expand_less</i></div>
-                            Compare features!
-                            <div><i class="material-icons">expand_more</i></div>
-                        </div>
-                    </a>
                 </div>
             </a>
 
@@ -195,15 +136,7 @@
             </a>
 
             <a href="./tournament">
-                <div class="card mb-3 twitch-card language-comparison">
-                    <div class="card-body">
-                        <h5 class="card-title">Feature comparison chart</h5>
-                    </div>
-                </div>
-            </a>
-
-            <a href="./tournament">
-                <div class="card mb-3 twitch-card">
+                <div class="card mb-3 twitch-card compact-card">
                     <div class="card-body">
                         <h5 class="card-title">Tournament</h5>
                         <p>See footage from our tournament that happened August 4-5, 2018!</p>
@@ -212,6 +145,20 @@
             </a>
         </div>
         <div class="col-lg-4">
+            <a href="./Features" class="no-underline">
+                <div class="card mb-3 compact-card">
+                    <div class="card-body" style="text-decoration: none">
+                        <h5 class="card-title">Feature comparison chart</h5>
+                        <div class="comparison-checks">
+                            <i class="material-icons">check_circle</i>
+                            <i class="material-icons">check_circle_outline</i>
+                            <i class="material-icons">check_circle</i>
+                            <i class="material-icons">check_circle_outline</i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
             <iframe src="https://discordapp.com/widget?id=348658686962696195&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
         </div>
 
