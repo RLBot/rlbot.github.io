@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RLBot</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="libs/gCalFlow/jquery.gcal_flow.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -20,10 +21,6 @@
     <style type="text/css">
         html, body {
             background-color: #ccd3d4;
-        }
-
-        body {
-            padding-bottom: 100px;
         }
 
         .line-logo {
@@ -42,9 +39,9 @@
             background-color: #fbfbfb;
         }
 
-        .card:hover  {
+        .card:hover {
             background-color: white;
-            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.10);
+            box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.10);
             transition: box-shadow 0.1s ease-in-out;
         }
 
@@ -61,7 +58,7 @@
         }
 
         .twitch-card {
-            background: linear-gradient(to bottom, #501e9a 0%,#612ad8 50%,#5920ca 51%,#777ed6 100%);
+            background: linear-gradient(to bottom, #501e9a 0%, #612ad8 50%, #5920ca 51%, #777ed6 100%);
             color: white;
         }
 
@@ -103,13 +100,29 @@
             border-radius: 3px;
         }
 
+        .ft-img {
+            height: 32px;
+        }
+
+        img.gray-to-color {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            -webkit-transition: .1s ease-in-out;
+            transition: .2s ease-in-out;
+        }
+
+        img:hover.gray-to-color {
+            -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+        }
+
     </style>
 </head>
 <body>
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-            <h1 class="display-4"><img src="rlbot_logo.png" class="line-logo"> RLBot</h1>
+        <h1 class="display-4"><img src="rlbot_logo.png" class="line-logo"> RLBot</h1>
         <p class="lead">Write custom
             <a href="https://store.steampowered.com/app/252950/Rocket_League/">Rocket League</a>
             bots for offline play.</p>
@@ -120,6 +133,34 @@
 
     <div class="row">
         <div class="col-lg-8">
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">What is RLBot?</h4>
+                    <p>RLBot is a framework that allows programmers to create offline Rocket League bots. We supports a
+                        variety of languages and fits all programming skill levels. As a community we frequently hold
+                        bot tournaments where bot makers compete by making bots and pit them against each
+                        other.</p>
+                    <h5>Getting started</h5>
+                    <ul>
+                        <li><a href="https://youtu.be/NjJzPoo16iQ">Video tutorial by @Goosefairy</a></li>
+                        <li>
+                            <a href="https://www.reddit.com/r/RocketLeagueBots/comments/6vu1tr/how_to_create_a_rocket_league_bot_part_1/">Text
+                                tutorial by @Redox</a></li>
+                        <li><a href="https://youtu.be/WGlYeqLiIEI">How to play against bots by @Skyborg</a></li>
+                        <li><a href="https://github.com/RLBot/RLBot/wiki/Frequently-Asked-Questions">Frequently asked
+                            questions</a></li>
+                    </ul>
+                    <h5>Useful resources</h5>
+                    <p>Check out the <a href="https://github.com/RLBot/RLBot/wiki">RLBot github wiki</a> for guides
+                        and other useful stuff for Rocket League bot making. If you can't find what you are looking
+                        for, come ask us in the Discord server. We are super active there!</p>
+                    <p>If you are into math and physics, check out <a
+                            href="https://samuelpmish.github.io/notes/RocketLeague/">@chip's blog</a> and his <a
+                            href="https://github.com/samuelpmish/RLUtilities/tree/868e203bd3b2562b5dc071f168ed31c7e411da35">RLUtilities</a>
+                        repository.</p>
+                </div>
+            </div>
 
             <a href="https://github.com/RLBot/RLBotScratchInterface">
                 <div class="card mb-3">
@@ -140,7 +181,7 @@
                     </div>
                 </div>
             </a>
-            
+
             <a href="https://github.com/RLBot/RLBotJavaExample">
                 <div class="card mb-3">
                     <div class="card-body">
@@ -227,11 +268,48 @@
                 });
             </script>
 
-            <iframe src="https://discordapp.com/widget?id=348658686962696195&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+            <iframe src="https://discordapp.com/widget?id=348658686962696195&theme=dark" width="350" height="500"
+                    allowtransparency="true" frameborder="0"></iframe>
         </div>
     </div>
 
 </div>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pb-5">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 py-5">
+                <div class="d-flex justify-content-center">
+
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/RLBotOfficial" class="mx-4">
+                        <img class="ft-img gray-to-color" src="twitter.png">
+                    </a>
+
+                    <!-- Youtube -->
+                    <a href="https://www.youtube.com/RLBot" class="mx-4">
+                        <img class="ft-img gray-to-color" src="youtube.png">
+                    </a>
+
+                    <!-- Twitch -->
+                    <a href="https://www.twitch.tv/rlbotofficial" class="mx-4">
+                        <img class="ft-img gray-to-color" src="twitch.png">
+                    </a>
+
+                    <!-- Reddit -->
+                    <a href="https://www.reddit.com/r/RocketLeagueBots/" class="mx-4">
+                        <img class="ft-img gray-to-color" src="reddit.png">
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
 
 </body>
 
