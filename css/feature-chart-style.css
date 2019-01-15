@@ -1,0 +1,40 @@
+/* Iconset */
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://bootstrapstudio.io/demo/embed/fonts/MaterialIcons-Regular.woff2) format('woff2');
+}
+
+.material-icons{
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.3em;
+    word-wrap: normal;
+}
+
+th a, th a:hover {
+    color: rgb(63, 123, 195);
+}
+
+.lang-header {
+    width: 60px;
+    display: inline-block;
+}
+
+@media (max-width: 767px) {
+    .lang-header {
+        width: auto;
+        display: inline;
+    }
+}
+
+table {
+    text-align: center;
+}
+
+.feature-col {
+    text-align: left;
+}
