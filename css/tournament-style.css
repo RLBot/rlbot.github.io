@@ -1,3 +1,8 @@
 html, body {
     background-color: #c3c5d2;
 }
+
+img.tournament-title {
+    float: right;
+    margin-left: 12px;
+}
