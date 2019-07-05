@@ -63,9 +63,13 @@ a .card-title {
     padding: 2px 8px;
 }
 
+.gCalFlow .gcf-item-container-block {
+    height: 150px;
+}
+
 .gCalFlow {
     width: 350px;
-    height: 200px;
+    height: auto;
     margin-bottom: 15px;
     border: none;
 }
