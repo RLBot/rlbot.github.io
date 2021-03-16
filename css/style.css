@@ -102,3 +102,24 @@ img:hover.gray-to-color {
 a h1, a:hover h1 {
     color: rgb(33, 37, 41);
 }
+
+.languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%
+}
+
+.languages a {
+    width: 100%;   
+}
+
+@media (min-width: 1200px) {
+    .languages a {
+        width: 49%;   
+    }
+}
+
+.languages .card {
+    height: 8rem;
+    margin-bottom: 1rem;
+}
