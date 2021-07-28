@@ -39,7 +39,7 @@
             <!-- How do I play against the bots? -->
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">How do I play against the bots?</h5>
+                    <h5 id="play-against-the-bots" class="card-title">How do I play against the bots?</h5>
                     <p>Follow <a href="https://youtu.be/oXkbizklI2U">this installation guide</a>.
                         It will also show you how to download the bot pack containing bots like Kamael and Botimus Prime.
                         Note, RLBot only works on PC both with Epic and Steam.</p>
@@ -49,7 +49,7 @@
             <!-- Which bot is the best bot and how good is it? -->
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">Which bot is the best bot and how good is it?</h5>
+                    <h5 id="which-bot-is-best" class="card-title">Which bot is the best bot and how good is it?</h5>
                     <p>The best bots are Kamael for 1v1 and 3x Bumblebee for 3v3. They are both around mid-gold level
                         in terms of skill and can be found in the bot pack.</p>
 
@@ -70,7 +70,7 @@
             <!-- Can RLBot be used online? -->
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">Can RLBot be used online?</h5>
+                    <h5 id="online-use" class="card-title">Can RLBot be used online?</h5>
                     <p>The RLBot framework cannot be used online. The API is only activated when the game is started
                         with a special RLBot setting which disables online play. You can be banned without warning if
                         we suspect that you have malicious intent (farming, levelling, etc.). We want to stay on
@@ -81,7 +81,7 @@
             <!-- Can I use RLBot with friends? -->
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">Can I use RLBot with friends?</h5>
+                    <h5 id="rlbot-with-friends" class="card-title">Can I use RLBot with friends?</h5>
                     <p>You can! It requires setting up a LAN/VLAN connection. <a href="https://github.com/RLBot/RLBot/wiki/LAN-Setup">Here is a guide</a>.</p>
 
                     <p>It is not possible to play with friends cross platform.</p>
@@ -91,7 +91,7 @@
             <!-- Are the bots using machine learning? -->
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">Are the bots using machine learning?</h5>
+                    <h5 id="machine-learning" class="card-title">Are the bots using machine learning?</h5>
                     <p>Most are hardcoded and do not use machine learning. However, since the release of
                         <a href="https://rlgym.github.io/">RLGym</a> the machine learning are progressing faster than
                         ever. If you are interesting in making a ML bot yourself, start by reading the
@@ -110,7 +110,7 @@
             <!-- How do I get started making my own bot? -->
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">How do I get started making my own bot?</h5>
+                    <h5 id="how-to-make-a-bot" class="card-title">How do I get started making my own bot?</h5>
                     <p>Decide which language to use. RLBot supports :python: Python (most used), Java, Scratch, C#,
                         Rust, C++, JavaScript, and Go. We recommend having some amount of experience with programming
                         before making a bot. However, making a bot can be a great way to get more comfortable with
@@ -139,7 +139,7 @@
             <!-- What is in the GameTickPacket and FieldInfo? -->
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">What is in the GameTickPacket and FieldInfo?</h5>
+                    <h5 id="game-tick-packet-and-field-info" class="card-title">What is in the GameTickPacket and FieldInfo?</h5>
                     <p>The GameTickPacket is a packet sent to your bot each tick. It contains information about
                         everything that tends to update during the game. For instance, the location and velocity of
                         all cars and the ball, the state of boost pads, the time elapsed.</p>
@@ -155,19 +155,21 @@
             <!-- What is the dimensions of the field? Gravity? Ball radius? Max speed? Boost? Kickoff locations? etc? -->
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">What is in the GameTickPacket and FieldInfo?</h5>
+                    <h5 id="useful-game-values" class="card-title">What is the dimensions of the field? Gravity? Ball radius? Max speed? Boost? Kickoff locations? etc?</h5>
                     <p>All of these values can be found on <a href="https://github.com/RLBot/RLBot/wiki/Useful-Game-Values">RLBot wiki</a>.</p>
 
                     <p>To learn more about the physics of Rocket League, see <a href="https://samuelpmish.github.io/notes/RocketLeague/">chip's notes</a>.</p>
 
                     <p>We also have a note on <a href="https://github.com/RLBot/RLBot/wiki/Jumping-Physics">jumping physics</a>.</p>
+
+                    <img src="https://i.imgur.com/nOz84cD.png" alt="game field dimensions" style="height: 400px"/>
                 </div>
             </div>
 
             <!-- How do I use debug rendering/game state setting/ball prediction/RLBotTraining? -->
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">How do I use debug rendering/game state setting/ball prediction/RLBotTraining?</h5>
+                    <h5 id="debug-rendering-game-state-setting-ball-prediction-rlbottraining" class="card-title">How do I use debug rendering/game state setting/ball prediction/RLBotTraining?</h5>
                     <p>The RLBot framework comes with a set of useful features. Learn more about these here:</p>
                     <ul>
                         <li><a href="https://github.com/RLBot/RLBot/wiki/Rendering">Debug rendering</a></li>
@@ -182,7 +184,7 @@
             <!-- How does RLBot work? -->
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">How does RLBot work?</h5>
+                    <h5 id="how-does-rlbot-work" class="card-title">How does RLBot work?</h5>
                     <p>RLBot uses an API in Rocket League specifically made for us. This API is activated when the
                         game is launched with the '-rlbot' flag, which simultaneously disables all online play.
                         The RLBotCore dll communicates with the game through this API and this is where most of the
