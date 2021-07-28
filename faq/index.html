@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RLBot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tournament-style.css">
+
+</head>
+<body>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <a href="../">
+            <h1 class="display-4"><img src="../rlbot_logo.png" class="line-logo"> RLBot</h1>
+        </a>
+        <p class="lead">Frequently asked questions and their answers!</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-8">
+
+            <!-- General info -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">FAQ</h5>
+                    <p>In what follows we have collected a series of frequently asked questions and their answers.
+                        If you do not find your question among these, feel free to join the
+                        <a href="https://discord.gg/zbaAKPt">Discord server</a> and ask there.</p>
+                </div>
+            </div>
+
+            <!-- How do I play against the bots? -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">How do I play against the bots?</h5>
+                    <p>Follow <a href="https://youtu.be/oXkbizklI2U">this installation guide</a>.
+                        It will also show you how to download the bot pack containing bots like Kamael and Botimus Prime.
+                        Note, RLBot only works on PC both with Epic and Steam.</p>
+                </div>
+            </div>
+
+            <!-- Which bot is the best bot and how good is it? -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Which bot is the best bot and how good is it?</h5>
+                    <p>The best bots are Kamael for 1v1 and 3x Bumblebee for 3v3. They are both around mid-gold level
+                        in terms of skill and can be found in the bot pack.</p>
+
+                    <p>Here is a summary of other bots in the bot pack:</p>
+
+                    <ul>
+                        <li><b>S-tier bots:</b> Kamael, ReliefBot, Self-driving car, 3x Bumblebee, Botimus Prime</li>
+                        <li><b>A-tier bots:</b> Wildfire, Codename Cryo, Diablo, Stick, St. Peter (goalie)</li>
+                        <li><b>B-tier bots:</b> Lanfear, PenguinBot, Manticore, Beast from the East, VirxEB, BribbleBot, DisasterBot</li>
+                        <li><b>Spice things up:</b> AdversityBot, Sniper, Snek, Invisibot, LaserBoi</li>
+                        <li><b>Machine learning bots:</b> Levi, TensorBot</li>
+                    </ul>
+
+                    <p>Notes: Self-driving car and Stick have no teamplay. Codename Cryo is best with 2 teammates.</p>
+                </div>
+            </div>
+
+            <!-- Can RLBot be used online? -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Can RLBot be used online?</h5>
+                    <p>The RLBot framework cannot be used online. The API is only activated when the game is started
+                        with a special RLBot setting which disables online play. You can be banned without warning if
+                        we suspect that you have malicious intent (farming, levelling, etc.). We want to stay on
+                        Psyonix's good side here.</p>
+                </div>
+            </div>
+
+            <!-- Can I use RLBot with friends? -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Can I use RLBot with friends?</h5>
+                    <p>You can! It requires setting up a LAN/VLAN connection. <a href="https://github.com/RLBot/RLBot/wiki/LAN-Setup">Here is a guide</a>.</p>
+
+                    <p>It is not possible to play with friends cross platform.</p>
+                </div>
+            </div>
+
+            <!-- Are the bots using machine learning? -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Are the bots using machine learning?</h5>
+                    <p>Most are hardcoded and do not use machine learning. However, since the release of
+                        <a href="https://rlgym.github.io/">RLGym</a> the machine learning are progressing faster than
+                        ever. If you are interesting in making a ML bot yourself, start by reading the
+                        <a href="https://github.com/RLBot/RLBot/wiki/Machine-Learning-FAQ">ML FAQ</a>.</p>
+
+                    <p>Some ML projects to check out are:</p>
+                    <ul>
+                        <li>Levi: Supervised learning on the bot Stick</li>
+                        <li>TensorBot: Supervised learning on the bot Diablo</li>
+                        <li>Element: Generic play using reinforcement learning</li>
+                        <li>Eagle: Air dribbling using reinforcement learning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- How do I get started making my own bot? -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">How do I get started making my own bot?</h5>
+                    <p>Decide which language to use. RLBot supports :python: Python (most used), Java, Scratch, C#,
+                        Rust, C++, JavaScript, and Go. We recommend having some amount of experience with programming
+                        before making a bot. However, making a bot can be a great way to get more comfortable with
+                        programming or a specific language.</p>
+
+                    <p>You can find example bots in each language on <a href="http://www.rlbot.org/">the frontpage</a>
+                        showing off the basics and various features.</p>
+
+                    <p>We also have a few tutorials:</p>
+                    <ul>
+                        <li><a href="https://youtube.com/playlist?list=PL2MGDOTjPtl8fuoXmqxTmASW1ZtrPEXQ2">GoslingUtils (Python)</a></li>
+                        <li><a href="https://www.youtube.com/playlist?list=PLeo0zkmzSE-UUFV-bd2vWtqiqe2cjaQNf">VirxERLU (Python)</a></li>
+                        <li><a href="https://www.youtube.com/playlist?list=PL0Chr9HhL2DQijgJ4b4ho4pBpxFfHXP0m">Java</a></li>
+                        <li><a href="https://tangil.me/posts/dodges">Dodges (C#)</a></li>
+                        <li><a href="https://tangil.me/posts/state">State systems (C#)</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=uGFmOZCpel8&list=PL6LKXu1RlPdxh9vxmG1y2sghQwK47_gCH">RLBotTraining</a></li>
+                    </ul>
+
+                    <p>Addition resources, documentation, and examples can be found on the
+                        <a href="https://github.com/RLBot/RLBot/wiki">RLBot wiki</a>. Feel free to ask for help in the
+                        <a href="https://discord.gg/zbaAKPt">Discord server</a> in the appropriate language channel or
+                        in the #strategy or #mathematics channels.</p>
+                </div>
+            </div>
+
+            <!-- What is in the GameTickPacket and FieldInfo? -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">What is in the GameTickPacket and FieldInfo?</h5>
+                    <p>The GameTickPacket is a packet sent to your bot each tick. It contains information about
+                        everything that tends to update during the game. For instance, the location and velocity of
+                        all cars and the ball, the state of boost pads, the time elapsed.</p>
+
+                    <p>The FieldInfo contains information that is static throughout the game. For instance, the
+                        location and size of boost pads and the location of goals.</p>
+
+                    <p>More information about the GameTickPacket, FieldInfo, and even the ControllerState can be
+                        on the <a href="https://github.com/RLBot/RLBotPythonExample/wiki/Input-and-Output-Data">RLBot wiki</a>.</p>
+                </div>
+            </div>
+
+            <!-- What is the dimensions of the field? Gravity? Ball radius? Max speed? Boost? Kickoff locations? etc? -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">What is in the GameTickPacket and FieldInfo?</h5>
+                    <p>All of these values can be found on <a href="https://github.com/RLBot/RLBot/wiki/Useful-Game-Values">RLBot wiki</a>.</p>
+
+                    <p>To learn more about the physics of Rocket League, see <a href="https://samuelpmish.github.io/notes/RocketLeague/">chip's notes</a>.</p>
+
+                    <p>We also have a note on <a href="https://github.com/RLBot/RLBot/wiki/Jumping-Physics">jumping physics</a>.</p>
+                </div>
+            </div>
+
+            <!-- How do I use debug rendering/game state setting/ball prediction/RLBotTraining? -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">How do I use debug rendering/game state setting/ball prediction/RLBotTraining?</h5>
+                    <p>The RLBot framework comes with a set of useful features. Learn more about these here:</p>
+                    <ul>
+                        <li><a href="https://github.com/RLBot/RLBot/wiki/Rendering">Debug rendering</a></li>
+                        <li><a href="https://github.com/RLBot/RLBot/wiki/Manipulating-Game-State">Game state setting/manipulation</a></li>
+                        <li><a href="https://github.com/RLBot/RLBot/wiki/Ball-Path-Prediction">Ball prediction</a></li>
+                        <li><a href="https://github.com/RLBot/RLBotPythonExample/wiki/Quickchat">Quick chat</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=uGFmOZCpel8&list=PL6LKXu1RlPdxh9vxmG1y2sghQwK47_gCH">RLBotTraining</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- How does RLBot work? -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">How does RLBot work?</h5>
+                    <p>RLBot uses an API in Rocket League specifically made for us. This API is activated when the
+                        game is launched with the '-rlbot' flag, which simultaneously disables all online play.
+                        The RLBotCore dll communicates with the game through this API and this is where most of the
+                        magic happens. Communication with bots are done through sockets (shared memory in the past)
+                        which allow us to support a wide range of languages.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-4">
+            <iframe src="https://discordapp.com/widget?id=348658686962696195&theme=dark" width="350" height="500"
+                    allowtransparency="true" frameborder="0"></iframe>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pb-5">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 py-5">
+                <div class="d-flex justify-content-center">
+
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/RLBotOfficial" class="mx-4">
+                        <img class="ft-img gray-to-color" src="../twitter.png">
+                    </a>
+
+                    <!-- Youtube -->
+                    <a href="https://www.youtube.com/c/RLBotOfficial" class="mx-4">
+                        <img class="ft-img gray-to-color" src="../youtube.png">
+                    </a>
+
+                    <!-- Twitch -->
+                    <a href="https://www.twitch.tv/rlbotofficial" class="mx-4">
+                        <img class="ft-img gray-to-color" src="../twitch.png">
+                    </a>
+
+                    <!-- Reddit -->
+                    <a href="https://www.reddit.com/r/RocketLeagueBots/" class="mx-4">
+                        <img class="ft-img gray-to-color" src="../reddit.png">
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
