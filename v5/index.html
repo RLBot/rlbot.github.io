@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RLBot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/libs/gCalFlow/jquery.gcal_flow.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <!--en-US appears to be baked into globalize.js already, horay.-->
+    <script src="libs/globalize/globalize.js" type="text/javascript"></script>
+    <script src="libs/globalize/cultures/globalize.culture.en-GB.js" type="text/javascript"></script>
+    <script src="libs/globalize/cultures/globalize.culture.de.js" type="text/javascript"></script>
+    <script src="libs/globalize/cultures/globalize.culture.nl.js" type="text/javascript"></script>
+    <script src="libs/globalize/cultures/globalize.culture.pt.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/libs/gCalFlow/jquery.gcal_flow.js"></script>
+
+</head>
+<body>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4"><img src="/rlbot_logo.png" class="line-logo"> RLBot</h1>
+        <p class="lead">Create and share
+            <a href="https://store.steampowered.com/app/252950/Rocket_League/">Rocket League</a>
+            bots for offline play.</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-8">
+
+            <div class="alert alert-warning">
+                If you are looking for the stable version of RLBot, you can find it <a href="/">here</a>.
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">What is RLBot?</h5>
+                    <p>
+                        RLBot enables custom bots in Rocket League. Using RLBot you can download and play with community-made bots,
+						play our challenging RLBot story mode, or make your own bots!
+                    </p>
+                    <a href="https://youtu.be/GLqvodQ942A" target="_blank" style="margin-right: 20px">
+                        <img style="height:1.5em" src="/youtube.png"> Quick Start Video</a>
+                    <img style="height:1.5em" src="/rlbot_logo.png">
+                        <a href="https://github.com/RLBot/core/releases/tag/v0.4.1" target="_blank"> Download RLBotServer</a>
+                    <br><br>
+
+                    <p>We also have <a href="https://wiki.rlbot.org/miscellaneous/lan-setup/">LAN/VLAN match support</a>, if you want to play with your friends!</p>
+
+                    <p>
+                        Join our <a href="https://discord.gg/zbaAKPt">Discord</a> chat server to participate in the community.
+                        If you're ready to get started, you can read more on our <a href="https://wiki.rlbot.org/">wiki</a>
+                        or click your favourite language below!
+                    </p>
+                </div>
+            </div>
+
+            <div class="alert alert-info">
+                We are currently working on a rewrite of RLBot, which will be a major update to the framework.
+                This page is for that in-development version of RLBot, called RLBot v5. Why RLBot v5? Want to know what's new?
+                <a href="https://wiki.rlbot.org/framework/v5/" target="_blank">Read more about it here</a>.
+            </div>
+
+            <div class="languages">
+                <a href="https://github.com/VirxEC/rlbot-python-example">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="/python.png" class="card-image-right">
+                            <h5 class="card-title">Python</h5>
+                            <p>Write a more advanced bot in Python!</p>
+                        </div>
+                    </div>
+                </a>
+    
+                <a href="https://github.com/VirxEC/csharp-interface/tree/master/Tests/Atba">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="/csharp.png" class="card-image-right">
+                            <h5 class="card-title">C#</h5>
+                            <p>Create a <em>professional</em> bot in C# (or any other .NET language)!</p>
+                        </div>
+                    </div>
+                </a>
+    
+                <a href="https://github.com/mtheall/RLBotCPP/tree/master/examples/ATBA">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="/cpp.png" class="card-image-right">
+                            <h5 class="card-title">C++</h5>
+                            <p>Create an <em>incredible</em> bot in C++!</p>
+                        </div>
+                    </div>
+                </a>
+    
+                <a href="https://github.com/swz-git/rust-interface/tree/master/crates/rlbot/examples/atba_agent">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="/rust.svg" class="card-image-right">
+                            <h5 class="card-title">Rust</h5>
+                            <p>Create a <em>blazingly fast</em> bot in Rust!</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- <a href="https://rlgym.org/"> -->
+                <a href="https://github.com/VirxEC/Elementv5">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="/rlgym.png" class="card-image-right">
+                            <h5 class="card-title">RLGym</h5>
+                            <p>Make a <em>sentient</em> Machine Learning bot with RLGym!</p>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+
+        </div>
+            
+        <div class="col-lg-4">
+
+            <a href="./faq">
+                <div class="card mb-3 compact-card">
+                    <div class="card-body" style="text-decoration: none">
+                        <h5 class="card-title">FAQ</h5>
+                        <p>Frequently asked questions</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./tournament">
+                <div class="card mb-3 compact-card">
+                    <div class="card-body" style="text-decoration: none">
+                        <h5 class="card-title">Tournaments</h5>
+                        <p>Upcoming and previous tournaments</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://wiki.rlbot.org">
+                <div class="card mb-3 compact-card">
+                    <div class="card-body" style="text-decoration: none">
+                        <h5 class="card-title">Wiki</h5>
+                        <p>Everything to know about RLBot</p>
+                    </div>
+                </div>
+            </a>
+
+            <div id="gcf-simple">
+                <div class="gcf-header-block">
+                    <span class="gcf-title-block">
+                        <span>Upcoming Events</span>
+                    </span>
+                    <a href="https://calendar.google.com/calendar/r?cid=rlbotofficial@gmail.com"
+                       target="_blank" class="gcf-subscribe">
+                        Subscribe
+                    </a>
+                </div>
+                <div class="gcf-item-container-block">
+                    <div class="gcf-item-block">
+                        <div class="gcf-item-header-block">
+                            <div class="gcf-item-date-block">
+                                <span class="gcf-item-daterange"></span>
+                            </div>
+                            <div class="gcf-item-title-block">
+                                <strong class="gcf-item-title"></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $('#gcf-simple').gCalFlow({
+                    calid: 'rlbotofficial%40gmail.com',
+                    auto_scroll: false,
+                    apikey: 'AIzaSyBQ40UqlMPexzWxTNd7EYtTrkoFF_DqpqM'
+                });
+            </script>
+
+            <iframe src="https://discordapp.com/widget?id=348658686962696195&theme=dark" width="350" height="500"
+                    allowtransparency="true" frameborder="0"></iframe>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pb-5">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 py-5">
+                <div class="d-flex justify-content-center">
+
+                    <!-- Discord -->
+                    <a href="https://discord.gg/zbaAKPt" class="mx-4">
+                        <img class="ft-img gray-to-color" src="discord.png">
+                    </a>
+
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/RLBotOfficial" class="mx-4">
+                        <img class="ft-img gray-to-color" src="twitter.png">
+                    </a>
+
+                    <!-- Youtube -->
+                    <a href="https://www.youtube.com/c/RLBotOfficial" class="mx-4">
+                        <img class="ft-img gray-to-color" src="youtube.png">
+                    </a>
+
+                    <!-- Twitch -->
+                    <a href="https://www.twitch.tv/rlbotofficial" class="mx-4">
+                        <img class="ft-img gray-to-color" src="twitch.png">
+                    </a>
+
+                    <!-- Reddit -->
+                    <a href="https://www.reddit.com/r/RocketLeagueBots/" class="mx-4">
+                        <img class="ft-img gray-to-color" src="reddit.png">
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>
