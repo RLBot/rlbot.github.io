@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://rlbot.org/agent.json",
+  "title": "RLBot agent",
+  "description": "A bot or script for RLBot",
+  "type": "object",
+  "properties": {
+    "settings": {
+      "type": "object",
+      "description": "The in-game applicable settings for the bot",
+      "properties": {
+        "agent_id": {
+          "type": "string",
+          "description": "The static, unique id that is associated with this bot. Preferred format is 'author/bot-name'."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the bot/script"
+        },
+        "loadout_file": {
+          "type": "string",
+          "description": "The path to the loadout file for the bot. Ignored for scripts."
+        },
+        "root_dir": {
+          "type": "string",
+          "description": "A path to the root directory of the bot, e.g. './bin/'. The run_command will be run from the root directory.",
+          "default": ""
+        },
+        "run_command": {
+          "type": "string",
+          "description": "Command RLBot can use to start the bot"
+        },
+        "run_command_linux": {
+          "type": "string",
+          "description": "Specialized command RLBot can use to start the bot on Linux"
+        },
+        "logo_file": {
+          "type": "string",
+          "description": "Relative path to logo image",
+          "default": "logo.png"
+        },
+        "hivemind": {
+          "type": "boolean",
+          "description": "Whether all bot team mates with this agent id is controlled by the same process. Ignored for scripts."
+        }
+      },
+      "required": ["agent_id", "name", "run_command"]
+    },
+    "details": {
+      "type": "object",
+      "description": "Optional details that will appear in RLBot's GUI",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "A description of the bot/script"
+        },
+        "fun_fact": {
+          "type": "string",
+          "description": "A fun fact about the bot/script"
+        },
+        "source_link": {
+          "type": "string",
+          "format": "uri",
+          "description": "A link to the source code of the bot/script"
+        },
+        "developer": {
+          "type": "string",
+          "description": "The developer(s) of the bot/script"
+        },
+        "language": {
+          "type": "string",
+          "description": "The language the bot/script is written in"
+        },
+        "tags": {
+          "type": "array",
+          "description": "A list of tags that describe the bot/script",
+          "items": {
+            "type": "string",
+            "enum": [
+              "1v1",
+              "teamplay",
+              "goalie",
+              "hoops",
+              "dropshot",
+              "snow-day",
+              "spike-rush",
+              "heatseeker",
+              "memebot"
+            ]
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  },
+  "required": ["settings"]
+}
