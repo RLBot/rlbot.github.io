@@ -1,0 +1,432 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://rlbot.org/match.json",
+  "title": "RLBot agent",
+  "description": "A bot or script for RLBot",
+  "type": "object",
+  "properties": {
+    "rlbot": {
+      "type": "object",
+      "description": "Options for launching an RLBot match",
+      "properties": {
+        "launcher": {
+          "type": "string",
+          "description": "Indicates how Rocket League should be launched if it is not already running",
+          "default": "Steam",
+          "enum": ["Steam", "Epic", "Custom", "NoLaunch"]
+        },
+        "launcher_arg": {
+          "type": "string",
+          "description": "Additional configuration for the launching method. \"legendary\" with the \"Custom\" launcher will use Legendary launcher, for example."
+        },
+        "auto_start_agents": {
+          "type": "boolean",
+          "description": "If true, RLBot will start the bots and scripts that has a non-empty run command in their player/script configuration",
+          "default": true
+        },
+        "wait_for_agents": {
+          "type": "boolean",
+          "description": "If true, RLBot will start the match only once all bots and script have connected and are ready. If false, the match will start as soon as the map loads.",
+          "default": true
+        }
+      },
+      "required": ["launcher"]
+    },
+    "match": {
+      "type": "object",
+      "description": "Options for launching an RLBot match",
+      "properties": {
+        "game_mode": {
+          "type": "string",
+          "description": "The game mode to use for the match",
+          "default": "Soccer",
+          "enum": [
+            "Soccer",
+            "Hoops",
+            "Dropshot",
+            "Hockey",
+            "Rumble",
+            "Heatseeker",
+            "Gridiron",
+            "Knockout"
+          ]
+        },
+        "game_map_upk": {
+          "type": "string",
+          "description": "The name of a upk file, like UtopiaStadium_P, which should be loaded. Ensure the map does NOT end in '.upk'. Available maps can be found here: https://github.com/RLBot/python-interface/blob/master/rlbot/utils/maps.py",
+          "pattern": "^(?!.*\\.upk$).+"
+        },
+        "skip_replays": {
+          "type": "boolean",
+          "description": "Automatically skip replays after a goal. Also stops match replays from being saved."
+        },
+        "start_without_countdown": {
+          "type": "boolean",
+          "description": "Skip the kickoff countdown"
+        },
+        "existing_match_behavior": {
+          "type": "string",
+          "description": "How to handle any ongoing match",
+          "default": "Restart",
+          "enum": ["Restart", "RestartIfDifferent", "ContinueAndSpawn"]
+        },
+        "enable_rendering": {
+          "type": "boolean",
+          "description": "Whether debug rendering is displayed"
+        },
+        "enable_state_setting": {
+          "type": "boolean",
+          "description": "Whether clients are allowed to manipulate the game state, e.g. teleporting cars and ball",
+          "default": true
+        },
+        "auto_save_replay": {
+          "type": "boolean",
+          "description": "Whether the match replay should be saved"
+        },
+        "freeplay": {
+          "type": "boolean",
+          "description": "If set to true, a free play match is launched instead of an exhibition match"
+        }
+      }
+    },
+    "mutators": {
+      "type": "object",
+      "description": "Mutators that should be applied for the match",
+      "properties": {
+        "match_length": {
+          "type": "string",
+          "description": "Duration of the match",
+          "default": "FiveMinutes",
+          "enum": ["FiveMinutes", "TenMinutes", "TwentyMinutes", "Unlimited"]
+        },
+        "max_score": {
+          "type": "string",
+          "description": "Max score of match. If this score is reached, the team immediately wins.",
+          "default": "Unlimited",
+          "enum": [
+            "Unlimited",
+            "OneGoal",
+            "ThreeGoals",
+            "FiveGoals",
+            "SevenGoals",
+            "TenGoals",
+            "TwentyGoals",
+            "ThirtyGoals",
+            "FortyGoals",
+            "FiftyGoals",
+            "SixtyGoals",
+            "SeventyGoals",
+            "EightyGoals",
+            "NinetyGoals",
+            "HundredGoals"
+          ]
+        },
+        "multi_ball": {
+          "type": "string",
+          "description": "The number of balls",
+          "default": "One",
+          "enum": ["One", "Two", "Four", "Six"]
+        },
+        "overtime": {
+          "type": "string",
+          "description": "The overtime rules and tiebreaker",
+          "default": "Unlimited",
+          "enum": [
+            "Unlimited",
+            "FiveMaxFirstScore",
+            "FiveMaxRandomTeam",
+            "TenMaxFirstScore",
+            "TenMaxRandomTeam"
+          ]
+        },
+        "series_length": {
+          "type": "string",
+          "description": "The series length",
+          "default": "Unlimited",
+          "enum": ["Unlimited", "ThreeGames", "FiveGames", "SevenGames"]
+        },
+        "game_speed": {
+          "type": "string",
+          "description": "A game speed multiplier",
+          "default": "Default",
+          "enum": ["Default", "SloMo", "TimeWarp"]
+        },
+        "ball_max_speed": {
+          "type": "string",
+          "description": "Ball max speed",
+          "default": "Default",
+          "enum": ["Default", "Slow", "Fast", "SuperFast"]
+        },
+        "ball_type": {
+          "type": "string",
+          "description": "Ball type and shape",
+          "default": "Default",
+          "enum": [
+            "Default",
+            "Cube",
+            "Puck",
+            "Basketball",
+            "Beachball",
+            "Anniversary",
+            "Haunted",
+            "Ekin",
+            "SpookyCube",
+            "Egg",
+            "PlayerSeeking",
+            "Dropshot",
+            "ScoreAbsorb"
+          ]
+        },
+        "ball_weight": {
+          "type": "string",
+          "description": "Ball weight and how much is curves",
+          "default": "Default",
+          "enum": [
+            "Default",
+            "Light",
+            "Heavy",
+            "SuperLight",
+            "CurveBall",
+            "BeachBallCurve",
+            "MagnusFutBall"
+          ]
+        },
+        "ball_size": {
+          "type": "string",
+          "description": "Ball size",
+          "default": "Default",
+          "enum": ["Default", "Small", "Medium", "Large", "Gigantic"]
+        },
+        "ball_bounciness": {
+          "type": "string",
+          "description": "Ball bounciness",
+          "default": "Default",
+          "enum": ["Default", "Low", "Lowish", "High", "SuperHigh"]
+        },
+        "boost_amount": {
+          "type": "string",
+          "description": "Boost amount/recharge",
+          "default": "NormalBoost",
+          "enum": [
+            "NormalBoost",
+            "UnlimitedBoost",
+            "SlowRecharge",
+            "RapidRecharge",
+            "NoBoost"
+          ]
+        },
+        "rumble": {
+          "type": "string",
+          "description": "Rumble item rules",
+          "default": "Off",
+          "enum": [
+            "Off",
+            "Default",
+            "Slow",
+            "Civilized",
+            "DestructionDerby",
+            "SpringLoaded",
+            "SpikesOnly",
+            "SpikeRush",
+            "HauntedBallBeam",
+            "Tactical",
+            "BatmanRumble",
+            "GrapplingOnly",
+            "HaymakerOnly"
+          ]
+        },
+        "boost_strength": {
+          "type": "string",
+          "description": "Boost strength multiplier",
+          "default": "One",
+          "enum": ["One", "OneAndAHalf", "Two", "Five", "Ten"]
+        },
+        "gravity": {
+          "type": "string",
+          "description": "Strength of gravity",
+          "default": "Default",
+          "enum": ["Default", "Low", "High", "SuperHigh", "Reverse"]
+        },
+        "demolish": {
+          "type": "string",
+          "description": "Demolition conditions",
+          "default": "Default",
+          "enum": [
+            "Default",
+            "Disabled",
+            "FriendlyFire",
+            "OnContact",
+            "OnContactFF",
+            "OnBallContact",
+            "OnBallContactFF"
+          ]
+        },
+        "respawn_time": {
+          "type": "string",
+          "description": "Demolition respawn time",
+          "default": "ThreeSeconds",
+          "enum": [
+            "ThreeSeconds",
+            "TwoSeconds",
+            "OneSecond",
+            "DisableGoalReset"
+          ]
+        },
+        "max_time": {
+          "type": "string",
+          "description": "Max real-time duration of match including kickoff, replays, and more. If the score is tied upon time-out, the number of shots determine the winner.",
+          "default": "Unlimited",
+          "enum": ["Unlimited", "ElevenMinutes"]
+        },
+        "game_event": {
+          "type": "string",
+          "description": "Additional game behaviour for custom modes",
+          "default": "Default",
+          "enum": ["Default", "Haunted", "Rugby"]
+        },
+        "audio": {
+          "type": "string",
+          "description": "Additional audio options for custom modes",
+          "default": "Default",
+          "enum": ["Default", "Haunted"]
+        },
+        "ball_gravity": {
+          "type": "string",
+          "description": "Ball gravity",
+          "default": "Default",
+          "enum": ["Default", "Low", "High", "SuperHigh"]
+        },
+        "territory": {
+          "type": "string",
+          "description": "Territory mutator",
+          "default": "Off",
+          "enum": ["Off", "Territory"]
+        },
+        "stale_ball": {
+          "type": "string",
+          "description": "Stable ball mutator",
+          "default": "Unlimited",
+          "enum": ["Unlimited", "ThirtySeconds"]
+        },
+        "jump": {
+          "type": "string",
+          "description": "Jumps mutator",
+          "default": "Default",
+          "enum": [
+            "Default",
+            "Grounded",
+            "Two",
+            "Three",
+            "Four",
+            "Unlimited",
+            "NoJumps"
+          ]
+        },
+        "dodge_timer": {
+          "type": "string",
+          "description": "Dodge timer mutator",
+          "default": "OnePointTwentyFiveSeconds",
+          "enum": [
+            "OnePointTwentyFiveSeconds",
+            "TwoSeconds",
+            "ThreeSeconds",
+            "Unlimited"
+          ]
+        },
+        "possession_score": {
+          "type": "string",
+          "description": "Possession score mutator",
+          "default": "Off",
+          "enum": ["Off", "OneSecond", "TwoSeconds", "ThreeSeconds"]
+        },
+        "demolish_score": {
+          "type": "string",
+          "description": "Demolish score mutator",
+          "default": "Zero",
+          "enum": ["Zero", "One", "Two", "Three"]
+        },
+        "normal_goal_score": {
+          "type": "string",
+          "description": "Normal goal score mutator",
+          "default": "One",
+          "enum": ["One", "Zero", "Two", "Three", "Five", "Ten"]
+        },
+        "aerial_goal_score": {
+          "type": "string",
+          "description": "Aerial goal score mutator",
+          "default": "One",
+          "enum": ["One", "Zero", "Two", "Three", "Five", "Ten"]
+        },
+        "assist_goal_score": {
+          "type": "string",
+          "description": "Assist goal score mutator",
+          "default": "Zero",
+          "enum": ["Zero", "One", "Two", "Three"]
+        },
+        "input_restriction": {
+          "type": "string",
+          "description": "Player input restriction mutator",
+          "default": "Default",
+          "enum": ["Default", "Backwards"]
+        }
+      }
+    },
+    "cars": {
+      "type": "array",
+      "description": "A list of players in the match",
+      "items": {
+        "type": "object",
+        "properties": {
+          "team": {
+            "type": ["string", "integer"],
+            "description": "The team of the player",
+            "default": "Blue",
+            "enum": ["Blue", "Orange", 0, 1]
+          },
+          "type": {
+            "type": "string",
+            "description": "Determines what controls the car",
+            "default": "RLBot",
+            "enum": ["RLBot", "Human", "Psyonix"]
+          },
+          "skill": {
+            "type": "string",
+            "description": "Determines the skill level of a Psyonix bot",
+            "default": "Allstar",
+            "enum": ["Beginner", "Rookie", "Pro", "Allstar"]
+          },
+          "config_file": {
+            "type": "string",
+            "description": "A path to a bot.toml config file"
+          },
+          "name": {
+            "type": "string",
+            "description": "Overrides the name in config_file"
+          },
+          "loadout_file": {
+            "type": "string",
+            "description": "Overrides the loadout in config_file"
+          }
+        },
+        "required": ["team"]
+      },
+      "uniqueItems": true
+    },
+    "scripts": {
+      "type": "array",
+      "description": "A list of scripts in the match",
+      "items": {
+        "type": "object",
+        "properties": {
+          "config_file": {
+            "type": "string",
+            "description": "A path to a script.toml config file"
+          }
+        },
+        "required": ["config_file"]
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": ["rlbot"]
+}
