@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://rlbot.org/match.json",
+  "$id": "https://rlbot.org/schemas/match.json",
   "title": "RLBot agent",
   "description": "A bot or script for RLBot",
   "type": "object",
@@ -409,8 +409,7 @@
           }
         },
         "required": ["team"]
-      },
-      "uniqueItems": true
+      }
     },
     "scripts": {
       "type": "array",
