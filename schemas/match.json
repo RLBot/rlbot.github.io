@@ -39,12 +39,12 @@
         "game_mode": {
           "type": "string",
           "description": "The game mode to use for the match",
-          "default": "Soccer",
+          "default": "Soccar",
           "enum": [
-            "Soccer",
+            "Soccar",
             "Hoops",
             "Dropshot",
-            "Hockey",
+            "Snowday",
             "Rumble",
             "Heatseeker",
             "Gridiron",
