@@ -39,12 +39,12 @@
         "game_mode": {
           "type": "string",
           "description": "The game mode to use for the match",
-          "default": "Soccer",
+          "default": "Soccar",
           "enum": [
-            "Soccer",
+            "Soccar",
             "Hoops",
             "Dropshot",
-            "Hockey",
+            "Snowday",
             "Rumble",
             "Heatseeker",
             "Gridiron",
@@ -71,8 +71,10 @@
           "enum": ["Restart", "RestartIfDifferent", "ContinueAndSpawn"]
         },
         "enable_rendering": {
-          "type": "boolean",
-          "description": "Whether debug rendering is displayed"
+          "type": ["string", "boolean"],
+          "description": "Whether debug rendering is displayed",
+          "default": "OffByDefault",
+          "enum": ["OffByDefault", "OnByDefault", "AlwaysOff", true, false]
         },
         "enable_state_setting": {
           "type": "boolean",
