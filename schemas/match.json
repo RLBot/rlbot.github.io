@@ -1,8 +1,8 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://rlbot.org/schemas/match.json",
-  "title": "RLBot agent",
-  "description": "A bot or script for RLBot",
+  "title": "RLBot match",
+  "description": "Configuration for an RLBot match, including the launch options, players, and scripts.",
   "type": "object",
   "properties": {
     "rlbot": {
@@ -17,24 +17,30 @@
         },
         "launcher_arg": {
           "type": "string",
-          "description": "Additional configuration for the launching method. \"legendary\" with the \"Custom\" launcher will use Legendary launcher, for example."
+          "description": "For the Custom launcher, use 'legendary' or 'heroic'. Other launchers ignore this setting.",
+          "examples": ["legendary", "heroic"]
         },
         "auto_start_agents": {
           "type": "boolean",
-          "description": "If true, RLBot will start the bots and scripts that has a non-empty run command in their player/script configuration",
+          "description": "If true, RLBot starts bots and scripts that have a launch command and do not set auto_start to false.",
           "default": true
         },
         "wait_for_agents": {
           "type": "boolean",
-          "description": "If true, RLBot will start the match only once all bots and script have connected and are ready. If false, the match will start as soon as the map loads.",
+          "description": "If true, RLBot waits for all bots and scripts to connect and become ready. If false, the match starts when the map loads.",
           "default": true
+        },
+        "performance_monitor": {
+          "type": "string",
+          "description": "Controls when RLBot shows the in-game performance monitor.",
+          "default": "ShowWhenSuboptimal",
+          "enum": ["ShowWhenSuboptimal", "AlwaysShow", "NeverShow"]
         }
-      },
-      "required": ["launcher"]
+      }
     },
     "match": {
       "type": "object",
-      "description": "Options for launching an RLBot match",
+      "description": "Settings for the game.",
       "properties": {
         "game_mode": {
           "type": "string",
@@ -42,6 +48,7 @@
           "default": "Soccar",
           "enum": [
             "Soccar",
+            "Soccer",
             "Hoops",
             "Dropshot",
             "Snowday",
@@ -53,16 +60,18 @@
         },
         "game_map_upk": {
           "type": "string",
-          "description": "The name of a upk file, like UtopiaStadium_P, which should be loaded. Ensure the map does NOT end in '.upk'. Available maps can be found here: https://github.com/RLBot/python-interface/blob/master/rlbot/utils/maps.py",
-          "pattern": "^(?!.*\\.upk$).+"
+          "description": "For an official map, use its package name without an extension, such as 'UtopiaStadium_P'. For a custom map, use the path to an existing .upk or .udk file.",
+          "default": "Stadium_P"
         },
         "skip_replays": {
           "type": "boolean",
-          "description": "Automatically skip replays after a goal. Also stops match replays from being saved."
+          "description": "Skip the replay after each goal.",
+          "default": false
         },
         "start_without_countdown": {
           "type": "boolean",
-          "description": "Skip the kickoff countdown"
+          "description": "Skip the kickoff countdown.",
+          "default": false
         },
         "existing_match_behavior": {
           "type": "string",
@@ -72,7 +81,7 @@
         },
         "enable_rendering": {
           "type": ["string", "boolean"],
-          "description": "Whether debug rendering is displayed",
+          "description": "Controls debug rendering. Boolean true means OnByDefault. Boolean false means AlwaysOff.",
           "default": "OffByDefault",
           "enum": ["OffByDefault", "OnByDefault", "AlwaysOff", true, false]
         },
@@ -83,11 +92,13 @@
         },
         "auto_save_replay": {
           "type": "boolean",
-          "description": "Whether the match replay should be saved"
+          "description": "Save the match replay automatically.",
+          "default": false
         },
         "freeplay": {
           "type": "boolean",
-          "description": "If set to true, a free play match is launched instead of an exhibition match"
+          "description": "Start a free play match instead of an exhibition match.",
+          "default": false
         }
       }
     },
@@ -120,7 +131,8 @@
             "SeventyGoals",
             "EightyGoals",
             "NinetyGoals",
-            "HundredGoals"
+            "HundredGoals",
+            "OneHundredFiftyOneGoals"
           ]
         },
         "multi_ball": {
@@ -133,17 +145,11 @@
           "type": "string",
           "description": "The overtime rules and tiebreaker",
           "default": "Unlimited",
-          "enum": [
-            "Unlimited",
-            "FiveMaxFirstScore",
-            "FiveMaxRandomTeam",
-            "TenMaxFirstScore",
-            "TenMaxRandomTeam"
-          ]
+          "enum": ["Unlimited", "FiveMaxFirstScore", "FiveMaxRandomTeam"]
         },
         "series_length": {
           "type": "string",
-          "description": "The series length",
+          "description": "Number of games in the series.",
           "default": "Unlimited",
           "enum": ["Unlimited", "ThreeGames", "FiveGames", "SevenGames"]
         },
@@ -176,12 +182,16 @@
             "Egg",
             "PlayerSeeking",
             "Dropshot",
-            "ScoreAbsorb"
+            "ScoreAbsorb",
+            "Shoe",
+            "PizzaPuck",
+            "Strike",
+            "SpookyBalloon"
           ]
         },
         "ball_weight": {
           "type": "string",
-          "description": "Ball weight and how much is curves",
+          "description": "Ball weight and curve.",
           "default": "Default",
           "enum": [
             "Default",
@@ -190,7 +200,9 @@
             "SuperLight",
             "CurveBall",
             "BeachBallCurve",
-            "MagnusFutBall"
+            "MagnusFutBall",
+            "MagnusFutballLess",
+            "Balloon"
           ]
         },
         "ball_size": {
@@ -223,7 +235,7 @@
           "default": "Off",
           "enum": [
             "Off",
-            "Default",
+            "DefaultRumble",
             "Slow",
             "Civilized",
             "DestructionDerby",
@@ -234,7 +246,9 @@
             "Tactical",
             "BatmanRumble",
             "GrapplingOnly",
-            "HaymakerOnly"
+            "HaymakerOnly",
+            "SpikeRushForce",
+            "RPS"
           ]
         },
         "boost_strength": {
@@ -260,7 +274,9 @@
             "OnContact",
             "OnContactFF",
             "OnBallContact",
-            "OnBallContactFF"
+            "OnBallContactFF",
+            "OnBallContactSilent",
+            "OnBallContactFFSilent"
           ]
         },
         "respawn_time": {
@@ -276,9 +292,26 @@
         },
         "max_time": {
           "type": "string",
-          "description": "Max real-time duration of match including kickoff, replays, and more. If the score is tied upon time-out, the number of shots determine the winner.",
+          "description": "Maximum elapsed match time. This includes kickoff and replays. If the score is tied when time runs out, the team with more shots wins.",
           "default": "Unlimited",
-          "enum": ["Unlimited", "ElevenMinutes"]
+          "enum": [
+            "Unlimited",
+            "OneMinute",
+            "TwoMinutes",
+            "ThreeMinutes",
+            "FourMinutes",
+            "FiveMinutes",
+            "SixMinutes",
+            "SevenMinutes",
+            "EightMinutes",
+            "NineMinutes",
+            "TenMinutes",
+            "ElevenMinutes",
+            "TwelveMinutes",
+            "ThirteenMinutes",
+            "FourteenMinutes",
+            "FifteenMinutes"
+          ]
         },
         "game_event": {
           "type": "string",
@@ -306,7 +339,7 @@
         },
         "stale_ball": {
           "type": "string",
-          "description": "Stable ball mutator",
+          "description": "Stale ball timer.",
           "default": "Unlimited",
           "enum": ["Unlimited", "ThirtySeconds"]
         },
@@ -394,12 +427,17 @@
           "skill": {
             "type": "string",
             "description": "Determines the skill level of a Psyonix bot",
-            "default": "Allstar",
-            "enum": ["Beginner", "Rookie", "Pro", "Allstar"]
+            "default": "AllStar",
+            "enum": ["Beginner", "Rookie", "Pro", "AllStar", "Allstar"]
           },
           "config_file": {
             "type": "string",
-            "description": "A path to a bot.toml config file"
+            "description": "Path to a bot config file, relative to this match config. For type RLBot, omit the path or use an empty string to get a Psyonix bot instead."
+          },
+          "auto_start": {
+            "type": "boolean",
+            "description": "Set to false to start this RLBot bot manually. This setting does not override rlbot.auto_start_agents.",
+            "default": true
           },
           "name": {
             "type": "string",
@@ -407,10 +445,9 @@
           },
           "loadout_file": {
             "type": "string",
-            "description": "Overrides the loadout in config_file"
+            "description": "Path to a loadout file, relative to this match config. Overrides the bot's loadout. An empty string disables the loadout from the bot config."
           }
-        },
-        "required": ["team"]
+        }
       }
     },
     "scripts": {
@@ -421,13 +458,18 @@
         "properties": {
           "config_file": {
             "type": "string",
-            "description": "A path to a script.toml config file"
+            "description": "Path to a script config file, relative to this match config.",
+            "minLength": 1
+          },
+          "auto_start": {
+            "type": "boolean",
+            "description": "Set to false to start this script manually. This setting does not override rlbot.auto_start_agents.",
+            "default": true
           }
         },
         "required": ["config_file"]
       },
       "uniqueItems": true
     }
-  },
-  "required": ["rlbot"]
+  }
 }
