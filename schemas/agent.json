@@ -1,17 +1,18 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://rlbot.org/schemas/agent.json",
   "title": "RLBot agent",
-  "description": "A bot or script for RLBot",
+  "description": "Configuration for an RLBot bot or script.",
   "type": "object",
   "properties": {
     "settings": {
       "type": "object",
-      "description": "The in-game applicable settings for the bot",
+      "description": "Settings for the bot or script.",
       "properties": {
         "agent_id": {
           "type": "string",
-          "description": "The static, unique id that is associated with this bot. Preferred format is 'author/bot-name'."
+          "description": "The unique ID the bot or script uses to connect to RLBot. Use the format 'author/name' or 'author/name/version'.",
+          "pattern": "\\S"
         },
         "name": {
           "type": "string",
@@ -19,32 +20,49 @@
         },
         "loadout_file": {
           "type": "string",
-          "description": "The path to the loadout file for the bot. Ignored for scripts."
+          "description": "Path to the bot's loadout file, relative to this config file. Ignored for scripts."
         },
         "root_dir": {
           "type": "string",
-          "description": "A path to the root directory of the bot, e.g. './bin/'. The run_command will be run from the root directory.",
+          "description": "Working directory for the launch command. Relative paths start at the directory that contains this config file.",
           "default": ""
         },
         "run_command": {
           "type": "string",
-          "description": "Command RLBot can use to start the bot"
+          "description": "Command to start the bot or script on Windows. Omit it or use an empty string to disable automatic launch on Windows."
         },
         "run_command_linux": {
           "type": "string",
-          "description": "Specialized command RLBot can use to start the bot on Linux"
+          "description": "Command to start the bot or script on Linux. When RLBot core reads a TOML config, it falls back to running the Windows command with Wine if this command is empty or missing. The GUI does not use this fallback."
         },
         "logo_file": {
           "type": "string",
-          "description": "Relative path to logo image",
+          "description": "Path to the logo image, relative to root_dir.",
           "default": "logo.png"
         },
         "hivemind": {
           "type": "boolean",
-          "description": "Whether all bot team mates with this agent id is controlled by the same process. Ignored for scripts."
+          "description": "If true, one process controls the bot's cars on the same team. Ignored for scripts.",
+          "default": false
+        },
+        "environment": {
+          "type": "object",
+          "description": "Environment variables for the process RLBot starts. Common values do not expand variable references. Use the windows or linux table to add or override values for that platform. The GUI appends to the current path list if the value starts with the path separator. It prepends if the value ends with the separator. Use ';' on Windows and ':' on Linux. RLBot sets RLBOT_AGENT_ID and RLBOT_SERVER_PORT itself.",
+          "properties": {
+            "windows": {
+              "$ref": "#/$defs/platformEnvironment",
+              "title": "Windows environment variables"
+            },
+            "linux": {
+              "$ref": "#/$defs/platformEnvironment",
+              "title": "Linux environment variables"
+            }
+          },
+          "additionalProperties": { "type": "string" },
+          "examples": [{ "NEXTO_VARIANT": "toxic" }]
         }
       },
-      "required": ["agent_id", "name", "run_command"]
+      "required": ["agent_id", "name"]
     },
     "details": {
       "type": "object",
@@ -96,5 +114,12 @@
       }
     }
   },
-  "required": ["settings"]
+  "required": ["settings"],
+  "$defs": {
+    "platformEnvironment": {
+      "type": "object",
+      "description": "String values for this platform. RLBot expands $VAR, ${VAR}, and %VAR% references from the environment of the GUI or core. Unknown references stay unchanged.",
+      "additionalProperties": { "type": "string" }
+    }
+  }
 }
